@@ -1,0 +1,31 @@
+export class AuxConsts {
+  static readonly CREATE_SAMPLE = "CREATE TABLE IF NOT EXISTS SAMPLE(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER NOT NULL)"
+  static readonly DROP_SAMPLE = "DROP TABLE SAMPLE"
+
+  static readonly COUNT_SAMPLE = "SELECT count(*) as qtd FROM SAMPLE"
+
+  static readonly SELECT_ALL_SAMPLE = "SELECT * FROM SAMPLE"
+  static readonly UPDATE_SAMPLE = "UPDATE SAMPLE SET NAME='John Doe' WHERE ID=5"
+
+  static readonly DELETE_SAMPLE_ID6 = "DELETE FROM SAMPLE WHERE ID=6"
+
+  static readonly SELECT_SAMPLE_IDX = "SELECT * FROM SAMPLE WHERE ID=:P1"
+  static readonly UPDATE_NAME_SAMPLE_IDX = "UPDATE SAMPLE SET NAME=:P1 WHERE ID=:P2"
+
+  static readonly INSERT_SAMPLE_TEMPLATE = (name: string, age: number) => `INSERT INTO SAMPLE(NAME, AGE) VALUES('${name}', ${age})`
+
+  static readonly BULK_INSERT_SAMPLE = `
+    INSERT INTO SAMPLE(NAME, AGE) VALUES('Luis Caldas A', 1);
+    INSERT INTO SAMPLE(NAME, AGE) VALUES('Luis Caldas B', 2);
+    INSERT INTO SAMPLE(NAME, AGE) VALUES('Luis Caldas C', 3);
+    INSERT INTO SAMPLE(NAME, AGE) VALUES('Luis Caldas D', 4);
+    INSERT INTO SAMPLE(NAME, AGE) VALUES('Luis Caldas E', 5);
+    INSERT INTO SAMPLE(NAME, AGE) VALUES('Luis Caldas F', 6);
+    INSERT INTO SAMPLE(NAME, AGE) VALUES('Luis Caldas G', 7);
+    INSERT INTO SAMPLE(NAME, AGE) VALUES('Luis Caldas H', 8);
+  `
+}
+// --- Função utilitária de log --------------------------------------
+export function echo<T>(local: number, value: T) {
+  console.log(`[${local}]`, value)
+}
