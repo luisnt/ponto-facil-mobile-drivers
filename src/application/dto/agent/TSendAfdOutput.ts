@@ -1,0 +1,1 @@
+export type TSendAfdOutput = { message: string };
