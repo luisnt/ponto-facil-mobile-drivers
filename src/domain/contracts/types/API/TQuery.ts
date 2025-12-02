@@ -1,1 +1,1 @@
-export type THeaders = Record<string, string>
+export type TQuery = Record<string, string>
